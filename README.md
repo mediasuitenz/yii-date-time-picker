@@ -1,6 +1,6 @@
 Yii CJuiDateTimePicker
 =======================
 
-Based on Anatoly Ivanchin <van4in@gmail.com>
+Based on [Anatoly Ivanchin](http://anatoliyivanchin.moikrug.ru/) [extension](http://www.yiiframework.com/extension/datetimepicker/)
 
-Updated by me
+Updated by [me](https://github.com/MetalGuardian)
