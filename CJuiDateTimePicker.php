@@ -20,7 +20,7 @@ class CJuiDateTimePicker extends \CJuiDatePicker
 		{
 			$this->language=\Yii::app()->getLanguage();
 		}
-		return parent::init();
+		parent::init();
 	}
 	
 	public function run()
@@ -58,18 +58,19 @@ class CJuiDateTimePicker extends \CJuiDatePicker
 
 		$js = "jQuery('#{$id}').{$this->mode}picker($options);";
 
-		if(isset($this->language))
-		{
-			$this->registerScriptFile($this->i18nScriptFile);
-			$js = "jQuery('#{$id}').{$this->mode}picker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['{$this->language}'], {$options}));";
-		}
-
 		$cs = \Yii::app()->getClientScript();
 		
 		$assets = \Yii::app()->getAssetManager()->publish(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets');
 		$cs->registerCssFile($assets . '/jquery-ui-timepicker-addon.css');
 		$cs->registerScriptFile($assets . '/jquery-ui-timepicker-addon.js',\CClientScript::POS_END);
-		
+
+		if(isset($this->language))
+		{
+			$this->registerScriptFile($this->i18nScriptFile);
+			$js = "jQuery('#{$id}').{$this->mode}picker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['{$this->language}'], {$options}));";
+			$cs->registerScriptFile($assets . '/localization/jquery-ui-timepicker-' . $this->language . '.js', \CClientScript::POS_END);
+		}
+
 		$cs->registerScript(__CLASS__,
 			$this->defaultOptions
 			? 'jQuery.{$this->mode}picker.setDefaults(' . \CJavaScript::encode($this->defaultOptions) . ');'
