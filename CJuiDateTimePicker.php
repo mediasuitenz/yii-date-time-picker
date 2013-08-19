@@ -53,6 +53,7 @@ class CJuiDateTimePicker extends \CJuiDatePicker
 		$assets = \Yii::app()->getAssetManager()->publish(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets');
 		$cs->registerCssFile($assets . '/jquery-ui-timepicker-addon.css');
 		$cs->registerScriptFile($assets . '/jquery-ui-timepicker-addon.js', \CClientScript::POS_END);
+		$cs->registerScriptFile($assets . '/jquery-ui-sliderAccess.js', \CClientScript::POS_END);
 
 		if (isset($this->language)) {
 			$this->registerScriptFile($this->i18nScriptFile);
@@ -61,7 +62,7 @@ class CJuiDateTimePicker extends \CJuiDatePicker
 jQuery('#{$id}').{$this->mode}picker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['{$this->language}'], {$options}));";
 EOD;
 			$cs->registerScriptFile(
-				$assets . '/localization/jquery-ui-timepicker-' . $this->language . '.js', \CClientScript::POS_END
+				$assets . '/i18n/jquery-ui-timepicker-' . $this->language . '.js', \CClientScript::POS_END
 			);
 		}
 		$cs->registerScript(
