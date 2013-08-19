@@ -1,0 +1,25 @@
+{
+	"name":"metalguardian/yii-date-time-picker",
+	"authors":[
+		{
+			"name":"Ivan Pushkin"
+		}
+	],
+	"repositories": [
+		{
+			"type":"package",
+			"package": {
+				"name": "trentrichardson/jquery-timepicker-addon",
+				"version":"master",
+				"source": {
+					"url": "https://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
+					"type": "git",
+					"reference":"master"
+				}
+			}
+		}
+	],
+	"require": {
+		"trentrichardson/jquery-timepicker-addon": "dev-master"
+	}
+}
