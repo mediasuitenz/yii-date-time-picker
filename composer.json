@@ -5,5 +5,8 @@
 			"name":"Ivan Pushkin"
 		}
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"autoload": {
+		"psr-0": {"yiiDateTimePicker": "/"}
+	}
 }

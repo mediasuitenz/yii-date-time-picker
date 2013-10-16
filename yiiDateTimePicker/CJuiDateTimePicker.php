@@ -5,6 +5,8 @@
  * @author Anatoly Ivanchin <van4in@gmail.com>
  */
 
+namespace yiiDateTimePicker;
+
 \Yii::import('zii.widgets.jui.CJuiDatePicker');
 
 /**
