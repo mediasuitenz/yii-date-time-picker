@@ -1,12 +1,13 @@
 {
-	"name":"metalguardian/yii-date-time-picker",
-	"authors":[
-		{
-			"name":"Ivan Pushkin"
-		}
-	],
-	"license": "MIT",
-	"autoload": {
-		"psr-0": {"yiiDateTimePicker": "/"}
-	}
+    "name": "mediasuitenz/yii-date-time-picker",
+    "description": "JQuery date time picker zii widget",
+    "authors": [
+        {
+            "name": "Ivan Pushkin"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability": "dev"
 }
