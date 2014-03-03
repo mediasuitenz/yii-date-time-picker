@@ -55,16 +55,16 @@ class CJuiDateTimePicker extends CJuiDatePicker
         $cs->registerScriptFile($assets . '/jquery-ui-timepicker-addon.js', CClientScript::POS_END);
         $cs->registerScriptFile($assets . '/jquery-ui-sliderAccess.js', CClientScript::POS_END);
 
-        if (isset($this->language)) {
-            $this->registerScriptFile($this->i18nScriptFile);
-            $js =
-<<<EOD
-jQuery('#{$id}').{$this->mode}picker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['{$this->language}'], {$options}));
-EOD;
-            $cs->registerScriptFile(
-                $assets . '/i18n/jquery-ui-timepicker-' . $this->language . '.js', CClientScript::POS_END
-            );
-        }
+//         if (isset($this->language)) {
+//             $this->registerScriptFile($this->i18nScriptFile);
+//             $js =
+// <<<EOD
+// jQuery('#{$id}').{$this->mode}picker(jQuery.extend({showMonthAfterYear:false}, jQuery.datepicker.regional['{$this->language}'], {$options}));
+// EOD;
+//             $cs->registerScriptFile(
+//                 $assets . '/i18n/jquery-ui-timepicker-' . $this->language . '.js', CClientScript::POS_END
+//             );
+//         }
         $cs->registerScript(
             __CLASS__, $this->defaultOptions ?
                 'jQuery.{$this->mode}picker.setDefaults(' . CJavaScript::encode($this->defaultOptions) . ');' : ''
